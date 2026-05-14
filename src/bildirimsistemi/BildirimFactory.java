@@ -6,6 +6,8 @@ public class BildirimFactory {
             return new EmailBildirim();
         } else if (tip.equalsIgnoreCase("SMS")) {
             return new SmsBildirim();
+        }else if (tip.equalsIgnoreCase("WHATSAPP")) {
+            return new WhatsAppAdapter(new WhatsAppServisi());
         }
         throw new IllegalArgumentException("Desteklenmeyen bildirim tipi!");
     }
